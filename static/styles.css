@@ -1,0 +1,194 @@
+/* ===== Global ===== */
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #f4f7fb;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ===== Chat Wrapper ===== */
+.chat {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ===== Card ===== */
+.card {
+    height: 600px;
+    border-radius: 18px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    border: none;
+}
+
+/* ===== Header ===== */
+.card-header {
+    border-radius: 18px 18px 0 0 !important;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e9f0 !important;
+    padding: 15px 20px;
+}
+
+.user_info span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.user_info p {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 0;
+}
+
+/* ===== Avatar ===== */
+.user_img {
+    height: 55px;
+    width: 55px;
+    border: none;
+}
+
+.user_img_msg {
+    height: 38px;
+    width: 38px;
+    border: none;
+}
+
+.img_cont {
+    height: 55px;
+    width: 55px;
+}
+
+.img_cont_msg {
+    height: 38px;
+    width: 38px;
+}
+
+/* Online dot */
+.online_icon {
+    height: 12px;
+    width: 12px;
+    background-color: #2ecc71;
+    border: 2px solid #ffffff;
+    bottom: 2px;
+    right: 2px;
+}
+
+/* ===== Message Area ===== */
+.msg_card_body {
+    padding: 20px;
+    overflow-y: auto;
+    background: #f9fafc;
+}
+
+/* ===== Bot Message ===== */
+.msg_cotainer {
+    max-width: 70%;
+    background-color: #e8f1ff;
+    color: #2c3e50;
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* ===== User Message ===== */
+.msg_cotainer_send {
+    max-width: 70%;
+    background-color: #d1f7e3;
+    color: #2c3e50;
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* ===== Time ===== */
+.msg_time,
+.msg_time_send {
+    font-size: 10px;
+    color: #95a5a6;
+    position: absolute;
+    bottom: -15px;
+}
+
+.msg_time {
+    left: 0;
+}
+
+.msg_time_send {
+    right: 0;
+}
+
+/* ===== Footer ===== */
+.card-footer {
+    border-radius: 0 0 18px 18px !important;
+    background: #ffffff;
+    border-top: 1px solid #e6e9f0 !important;
+    padding: 10px 15px;
+}
+
+/* ===== Input ===== */
+.type_msg {
+    background: #f1f3f6 !important;
+    border: none !important;
+    color: #2c3e50 !important;
+    height: 48px !important;
+    border-radius: 25px !important;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.type_msg::placeholder {
+    color: #95a5a6;
+}
+
+.type_msg:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ===== Send Button ===== */
+.send_btn {
+    background: #4a6cf7 !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    width: 45px;
+    height: 45px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.send_btn:hover {
+    background: #3b5bdb !important;
+}
+
+/* ===== Scrollbar ===== */
+.msg_card_body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.msg_card_body::-webkit-scrollbar-thumb {
+    background: #dcdde1;
+    border-radius: 10px;
+}
+
+.msg_card_body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 576px) {
+    .card {
+        height: 100vh;
+        border-radius: 0 !important;
+    }
+}
