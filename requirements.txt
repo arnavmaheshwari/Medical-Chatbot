@@ -8,9 +8,5 @@ langchain-core
 langchain-community
 langchain-pinecone
 langchain-google-genai
-langchain-text-splitters
-langchain-huggingface
 
 pypdf
-sentence-transformers
-huggingface-hub

@@ -4,10 +4,19 @@ from flask import Flask, render_template, request
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import ChatGoogleGenerativeAI
-from src.helper import download_hugging_face_embeddings
+from langchain_core.embeddings import Embeddings
 from src.prompt import MEDICAL_QA_PROMPT
 
+# -------------------- Create Dummy Embeddings Class --------------------
 
+class DummyEmbeddings(Embeddings):
+    def embed_documents(self, texts):
+        # Return zero vectors (never used for indexing)
+        return [[0.0] * 384 for _ in texts]
+
+    def embed_query(self, text):
+        # Return a zero vector for queries
+        return [0.0] * 384
 
 # -------------------- App Setup --------------------
 
@@ -26,8 +35,10 @@ INDEX_NAME = "medical-chatbot"
 
 docsearch = PineconeVectorStore.from_existing_index(
     index_name=INDEX_NAME,
-    embedding=embeddings
+    embedding=DummyEmbeddings(),
+    pool_threads=1
 )
+
 
 retriever = docsearch.as_retriever(
     search_type="similarity",
@@ -96,4 +107,4 @@ def chat():
 # -------------------- Main --------------------
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=False)
