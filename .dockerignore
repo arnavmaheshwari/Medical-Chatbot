@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+research/
+.ipynb_checkpoints/
+data/
+store_index.py
+.git
+.gitignore
