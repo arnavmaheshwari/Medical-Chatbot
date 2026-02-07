@@ -22,8 +22,6 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-embeddings = download_hugging_face_embeddings()
-
 INDEX_NAME = "medical-chatbot"
 
 docsearch = PineconeVectorStore.from_existing_index(
