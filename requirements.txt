@@ -10,3 +10,5 @@ langchain-pinecone
 langchain-google-genai
 
 pypdf
+
+fastembed

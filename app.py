@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.embeddings import Embeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from src.prompt import MEDICAL_QA_PROMPT
 
 # -------------------- Create Dummy Embeddings Class --------------------
@@ -33,11 +33,16 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 
 INDEX_NAME = "medical-chatbot"
 
+embeddings = FastEmbedEmbeddings(
+    model_name="BAAI/bge-small-en-v1.5"
+)
+
 docsearch = PineconeVectorStore.from_existing_index(
     index_name=INDEX_NAME,
-    embedding=DummyEmbeddings(),
+    embedding=embeddings,
     pool_threads=1
 )
+
 
 
 retriever = docsearch.as_retriever(
