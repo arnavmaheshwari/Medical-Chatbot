@@ -125,8 +125,6 @@ The application will start on `http://0.0.0.0:8080`.
 * **Distance Metric**: Cosine Similarity
 * **Cloud Environment**: AWS (`us-east-1`)
 
-# Screenshots
-
 # Deployment
 
 This project is containerized using Docker and utilizes GitHub Actions for continuous integration.
@@ -170,7 +168,6 @@ This project is licensed under the Apache License, Version 2.0.
 # Author
 
 **Arnav Maheshwari**
-Database Engineer
 
 # Acknowledgements
 
